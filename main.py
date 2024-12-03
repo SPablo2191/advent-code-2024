@@ -1,4 +1,6 @@
-from advent.day_02 import part_two as advent_day
+from advent.day_03 import part_one as advent_day_one
+from advent.day_03 import part_two as advent_day_two
 
 if __name__ == "__main__":
-    advent_day.main()
+    advent_day_one.main()
+    advent_day_two.main()
