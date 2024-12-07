@@ -1,7 +1,7 @@
 import re
 from advent.tools.reader import read_output
 
-INPUT_DATA = "advent/day_03/example_input.txt"
+INPUT_DATA = "advent/day_03/input.txt"
 regex = r"mul\((\d{1,3}),(\d{1,3})\)"
 delimiters = r"don't\(\)|do\(\)"
 
@@ -11,10 +11,8 @@ def main():
     acc = 0
     for line in lines:
         parts = re.split(delimiters, line)
-        print(parts)
         for i in range(0, len(parts), 2):
-            values = re.match(regex, parts[i])
-            print(values)
+            values = re.findall(regex, parts[i])
             if values:
                 for value in values:
                     acc += int(value[0]) * int(value[1])
